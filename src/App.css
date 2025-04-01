@@ -1,0 +1,65 @@
+/* Additional Styles */
+.connection-status {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  z-index: 1000;
+}
+
+.connection-status.online {
+  background: var(--color-success);
+  color: white;
+}
+
+.connection-status.offline {
+  background: var(--color-warning);
+  color: white;
+}
+
+.report-form {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin-bottom: 2rem;
+}
+
+.photo-preview {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  margin: 1rem 0;
+  border-radius: 4px;
+}
+
+.error-message {
+  color: var(--color-danger);
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+}
+
+.loading-spinner {
+  border: 3px solid var(--color-light);
+  border-top: 3px solid var(--color-primary);
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.offline-badge {
+  background: var(--color-warning);
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  margin-left: 0.5rem;
+}
