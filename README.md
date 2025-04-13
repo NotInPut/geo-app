@@ -2,7 +2,7 @@
 
 SiteSpotter is a Progressive Web Application (PWA) designed for field reporting, allowing users to document site observations, maintenance issues, hazards, and other environmental concerns with support for offline operation.
 
-![SiteSpotter Screenshot](https://example.com/screenshots/siteSpotter.png)
+![SiteSpotter Screenshot](public/webpage.png)
 
 ## Features
 
@@ -15,13 +15,13 @@ SiteSpotter is a Progressive Web Application (PWA) designed for field reporting,
 
 ## Demo
 
-Try the live demo at: [https://geo-app-eta.vercel.app/](https://geo-app-eta.vercel.app/)
+Try the live demo at: [https://geo-app-iota.vercel.app/](https://geo-app-iota.vercel.app/)
 
 ## Installation Options
 
 ### Method 1: Installing as a PWA (Recommended)
 
-1. Visit the SiteSpotter website in Chrome, Edge, or Safari: [https://geo-app-eta.vercel.app/](https://geo-app-eta.vercel.app/)
+1. Visit the SiteSpotter website in Chrome, Edge, or Safari: [https://geo-app-iota.vercel.app/](https://geo-app-iota.vercel.app/)
 2. Wait for the page to fully load
 3. Look for the install prompt in your browser:
    - Chrome/Edge: Click the "Install" button in the address bar
