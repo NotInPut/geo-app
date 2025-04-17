@@ -75,7 +75,7 @@ async function syncReports() {
     // Process each item in the queue
     for (const item of queue) {
       console.log('Processing queued report:', item.data);
-      // Add any additional logic here if needed
+    
     }
 
     // Clear the queue after processing

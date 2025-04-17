@@ -19,11 +19,16 @@ function ReportForm({ addReport }) {
     setFormData((prev) => ({ ...prev, image: imageUrl }));
     setShowCamera(false);
   };
-
+  //location access function
   async function getCurrentLocation() {
     try {
       const position = await new Promise((resolve, reject) => {
-        navigator.geolocation.getCurrentPosition(resolve, reject);
+        const geoOptions = {
+          enableHighAccuracy: true,
+          timeout: 5000,
+          maximumAge: 0
+        };
+        navigator.geolocation.getCurrentPosition(resolve, reject, geoOptions);
       });
 
       return {
@@ -32,7 +37,8 @@ function ReportForm({ addReport }) {
         accuracy: position.coords.accuracy,
       };
     } catch (error) {
-      console.error("Error getting location:", error);
+      console.warn("Location access denied or unavailable:", error);
+      // Return null instead of throwing an error
       return null;
     }
   }
@@ -58,13 +64,21 @@ function ReportForm({ addReport }) {
 
     setIsSubmitting(true);
     try {
+      // Request the user's location, but don't require it
       const location = await getCurrentLocation();
+      
+      // Notify user if location couldn't be accessed
+      if (!location) {
+        console.log("Location access denied. Submitting report without location data.");
+      }
+
       await addReport({
         ...formData,
-        location,
+        location, // This might be null if location access was denied
         timestamp: new Date().toISOString(),
       });
 
+      // Reset the form after successful submission
       setFormData({
         title: "",
         description: "",
@@ -75,7 +89,7 @@ function ReportForm({ addReport }) {
       });
       setErrors({});
     } catch (error) {
-      setErrors({ submit: "Failed to submit report. Please try again." });
+      setErrors({ submit: "Failed to submit report: " + error.message });
     } finally {
       setIsSubmitting(false);
     }
@@ -194,6 +208,7 @@ function ReportForm({ addReport }) {
           )}
         </div>
 
+
         <div className="form-footer">
           {errors.submit && (
             <div className="error-message">{errors.submit}</div>
@@ -221,4 +236,5 @@ function ReportForm({ addReport }) {
     </>
   );
 }
+
 export default ReportForm;

@@ -1,12 +1,16 @@
 /* Additional Styles */
 .connection-status {
-  position: fixed;
-  top: 1rem;
-  right: 1rem;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  font-size: 0.875rem;
-  z-index: 1000;
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+.app-header h1 {
+  text-align: center;
+  flex-grow: 1;
 }
 
 .connection-status.online {

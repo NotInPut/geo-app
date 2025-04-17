@@ -75,6 +75,14 @@ function App() {
     );
   }
 
+  function updateReport(id, updatedFields) {
+    setReports((prev) =>
+      prev.map((report) =>
+        report.id === id ? { ...report, ...updatedFields } : report
+      ) 
+    );
+  }
+
   function deleteReport(id) {
     setReports((prev) => prev.filter((report) => id !== report.id));
   }
@@ -94,16 +102,17 @@ function App() {
   ));
 
   const reportList = reports
-    .filter(FILTER_MAP[filter])
-    .sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp))
-    .map((report) => (
-      <Report
-        key={report.id}
-        {...report}
-        toggleReportResolved={toggleReportResolved}
-        deleteReport={deleteReport}
-      />
-    ));
+  .filter(FILTER_MAP[filter])
+  .sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp))
+  .map((report) => (
+    <Report
+      key={report.id}
+      {...report}
+      toggleReportResolved={toggleReportResolved}
+      deleteReport={deleteReport}
+      updateReport={updateReport} 
+    />
+  ));
 
   return (
     <div className="siteSpotter stack-large">
