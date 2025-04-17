@@ -7,6 +7,7 @@ SiteSpotter is a Progressive Web Application (PWA) designed for field reporting,
 ## Features
 
 - **Create detailed reports** with titles, descriptions, categories, and priority levels
+- **Edit existing reports** to update information as situations change
 - **Capture photos** directly within the application
 - **Record GPS coordinates** automatically
 - **Work offline** with full data synchronization when back online
@@ -66,7 +67,7 @@ npm run build
 yarn build
 ```
 
-The build output will be in the `dist` directory.
+The build output will be in the dist directory.
 
 ## Usage Guide
 
@@ -85,11 +86,22 @@ The build output will be in the `dist` directory.
 - Delete reports with the "Delete" button
 - View full-size images by clicking on them
 
+### Editing Reports
+1. Locate the report you want to modify
+2. Click the "Edit" button on the report card
+3. The report will enter edit mode, allowing you to change:
+   - Title and description
+   - Category (Maintenance, Wildlife, Hazard, or Vandalism)
+   - Priority level (Low, Medium, High)
+4. Make your desired changes
+5. Click "Save" to update the report, or "Cancel" to discard changes
+
 ### Offline Usage
 SiteSpotter works fully offline:
 - The app will indicate offline status
 - Reports created offline will be synchronized automatically when connection is restored
 - All data is stored locally on your device
+- Editing functionality works offline as well
 
 ## Technology Stack
 
